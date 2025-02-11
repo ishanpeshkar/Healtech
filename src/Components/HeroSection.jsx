@@ -20,7 +20,7 @@ const HeroSection = () => {
         </div>
         <div className="md:w-1/2">
           {/* Replace with an actual image later */}
-          <img src="https://via.placeholder.com/500x300/42a5f5/fff/?text=Healthcare+AI" alt="Healthcare AI Concept" className="rounded-lg shadow-md" />
+          <img src="/Images/HeroSectionImage.jpg" alt="Healthcare AI Concept" className="rounded-lg shadow-md" />
         </div>
       </div>
     </div>

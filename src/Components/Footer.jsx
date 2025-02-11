@@ -1,32 +1,34 @@
 import React from 'react';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    { href: "https://facebook.com", icon: "fab fa-facebook-square", label: "Facebook" },
+    { href: "https://twitter.com", icon: "fab fa-twitter-square", label: "Twitter" },
+    { href: "https://linkedin.com", icon: "fab fa-linkedin", label: "LinkedIn" },
+  ];
+
   return (
-    <footer className="bg-gray-800 text-white py-6 px-6 md:px-24">
+    <footer className="bg-gray-900 text-white py-12 px-6 md:px-24 transition duration-300">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div>
-          <p>© {new Date().getFullYear()} HEALTECH. All rights reserved.</p>
+          <p className="text-lg font-semibold">© {currentYear} HEALTECH. All rights reserved.</p>
         </div>
         <div className="mt-4 md:mt-0">
-          <ul className="flex space-x-4">
-            <li><a href="/" className="hover:text-gray-300">Home</a></li>
-            <li><a href="/about" className="hover:text-gray-300">About</a></li>
-            <li><a href="/features" className="hover:text-gray-300">Features</a></li>
-            <li><a href="/contact" className="hover:text-gray-300">Contact Us</a></li>
-            <li><a href="/privacy" className="hover:text-gray-300">Privacy Policy</a></li>
-            <li><a href="/terms" className="hover:text-gray-300">Terms of Use</a></li>
+          <ul className="flex space-x-6">
+            <li><a href="/contact" className="hover:text-gray-400 transition duration-200">Contact Us</a></li>
+            <li><a href="/privacy" className="hover:text-gray-400 transition duration-200">Privacy Policy</a></li>
+            <li><a href="/terms" className="hover:text-gray-400 transition duration-200">Terms of Use</a></li>
+            <li><a href="/about" className="hover:text-gray-400 transition duration-200">About Us</a></li>
           </ul>
         </div>
-        <div>
-          <a href="#" className="text-gray-300 hover:text-white mr-4">
-            <i className="fab fa-facebook-square fa-lg"></i>
-          </a>
-          <a href="#" className="text-gray-300 hover:text-white mr-4">
-            <i className="fab fa-twitter-square fa-lg"></i>
-          </a>
-          <a href="#" className="text-gray-300 hover:text-white">
-            <i className="fab fa-linkedin fa-lg"></i>
-          </a>
+        <div className="flex space-x-4 mt-4 md:mt-0">
+          {socialLinks.map((link) => (
+            <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition duration-200">
+              <i className={`${link.icon} fa-lg`} aria-label={link.label}></i>
+            </a>
+          ))}
         </div>
       </div>
     </footer>
