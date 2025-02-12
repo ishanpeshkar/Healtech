@@ -14,8 +14,8 @@ const Navbar = () => {
         {/* Navigation Links (Middle) */}
         <div className="hidden md:flex space-x-6">
           <Link to="/" className="hover:text-gray-500">Home</Link>
-          <Link to="/about" className="hover:text-gray-500">About</Link>
           <Link to="/features" className="hover:text-gray-500">Features</Link>
+          <Link to="/about" className="hover:text-gray-500">About</Link>
           <Link to="/contact" className="hover:text-gray-500">Contact</Link>
         </div>
 

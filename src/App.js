@@ -4,8 +4,8 @@ import Navbar from './Components/Navbar';
 import HeroSection from './Components/HeroSection';
 import AboutSection from './Components/AboutSection';
 import FeaturesSection from './Components/FeaturesSection';
-import DiseaseDetection from './Components/DiseaseDetection';
-import ConsultationSection from './Components/ConsultationSection';
+import DiseaseDetection from './Components/DiseaseDetection'; // Separate Disease Detection Component
+import ConsultationSection from './Components/ConsultationSection'; // Separate Consultation Component
 import TestimonialsSection from './Components/TestimonialsSection';
 import Footer from './Components/Footer';
 import ContactSection from './Components/ContactSection'; // Import your Contact component
@@ -23,19 +23,21 @@ function App() {
             <>
               <HeroSection />
               <AboutSection />
-              <FeaturesSection />
-              <DiseaseDetection />
-              <ConsultationSection />
+              <FeaturesSection /> {/* Core features including disease detection and consultation sections */}
               <TestimonialsSection />
+              <ContactSection />
+              <Footer />
             </>
           } />
-          <Route path="/about" element={<AboutSection />} />
           <Route path="/features" element={<FeaturesSection />} />
+          <Route path="/about" element={<AboutSection />} />
           <Route path="/contact" element={<ContactSection />} />
           <Route path="/login" element={<LoginComponent />} />
           <Route path="/signup" element={<SignupComponent />} />
+          {/* New routes for Disease Detection and Consultation */}
+          <Route path="/disease-detection" element={<DiseaseDetection />} />
+          <Route path="/consultation" element={<ConsultationSection />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
